@@ -16,6 +16,9 @@ use Symfony\Component\Yaml\Yaml;
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Yaml font-awesome icons list parser.
+ */
 class Parser {
 
 	/**

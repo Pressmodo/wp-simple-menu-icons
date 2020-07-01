@@ -104,6 +104,7 @@ var sassConfig = {
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/admin.scss`, 'css', sassConfig );
+mix.copy( 'node_modules/@fortawesome/fontawesome-free/metadata/icons.yml', 'dist/metadata')
 
 /*
  * Add custom Webpack configuration.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     WP Simple Menu Icons
  * Plugin URI:      https://pressmodo.com
- * Description:     Companion plugin for the DirectoryStack Premium WordPress theme.
+ * Description:     An easy way to add icons to your navigation menus.
  * Author:          Sematico LTD
  * Author URI:      https://sematico.com
  * Text Domain:     wp-simple-menu-icons

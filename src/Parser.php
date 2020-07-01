@@ -113,6 +113,7 @@ class Parser {
 				$data[] = array(
 					'id'      => sanitize_text_field( $id ),
 					'unicode' => sanitize_text_field( $icon['unicode'] ),
+					'style'   => sanitize_text_field( $this->parse_style_class( $icon['styles'][0] ?? '' ) ),
 				);
 			}
 		}
@@ -126,6 +127,26 @@ class Parser {
 		$wp_filesystem->put_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json', $file_content, FS_CHMOD_FILE );
 
 		wp_die( esc_html__( 'Font file successfully generated.' ) );
+
+	}
+
+	/**
+	 * Get style class.
+	 *
+	 * @param string $style style class
+	 * @return string
+	 */
+	private function parse_style_class( $style ) {
+
+		$class = '';
+
+		if ( $style === 'solid' ) {
+			$class = 'fas';
+		} else {
+			$class = 'fab';
+		}
+
+		return $class;
 
 	}
 

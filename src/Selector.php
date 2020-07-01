@@ -89,7 +89,7 @@ class Selector {
 		wp_enqueue_media();
 
 		wp_enqueue_style( 'wpsmi-admin', WP_SMI_PLUGIN_URL . 'dist/css/admin.css', array(), WP_SMI_VERSION );
-		wp_enqueue_style( 'wpsmi-fa', WP_SMI_PLUGIN_URL . 'dist/css/all.min.css', [], WP_SMI_VERSION );
+		wp_enqueue_style( 'wpsmi-fa', WP_SMI_PLUGIN_URL . 'dist/css/all.min.css', array(), WP_SMI_VERSION );
 
 		wp_enqueue_script(
 			'wpsmi-admin',

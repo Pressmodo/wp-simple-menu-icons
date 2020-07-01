@@ -67,7 +67,7 @@ $icons = json_decode( file_get_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json' )
 									<li tabindex="0" role="checkbox" aria-label="<?php echo esc_attr( $icon->id ); ?>" aria-checked="false" data-id="<?php echo esc_attr( $icon->id ); ?>" class="attachment save-ready icon _<?php echo esc_attr( str_replace( ' ', '_', trim( $icon->id ) ) ); ?>">
 										<div class="attachment-preview js--select-attachment type-image subtype-jpeg landscape">
 											<div class="thumbnail">
-												<i class="fas fa-<?php echo esc_attr( $icon->id ); ?>"></i>
+												<i class="<?php echo esc_attr( $icon->style ); ?> fa-<?php echo esc_attr( $icon->id ); ?>"></i>
 											</div>
 										</div>
 										<button type="button" class="check" tabindex="-1">

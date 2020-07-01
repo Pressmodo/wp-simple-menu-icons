@@ -19,7 +19,6 @@ defined( 'ABSPATH' ) || exit;
  */
 class Selector {
 
-
 	/**
 	 * Default values of icons.
 	 *

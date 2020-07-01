@@ -52,6 +52,8 @@ class Parser {
 
 		add_action( 'admin_bar_menu', array( $this, 'add_parse_trigger_link' ), 100 );
 
+		add_action( 'admin_init', array( $this, 'trigger_parser' ) );
+
 	}
 
 	/**
@@ -65,12 +67,40 @@ class Parser {
 			array(
 				'id'    => 'wpsmi-parse-fa',
 				'title' => esc_html__( 'Parse FA Icons' ),
-				'href'  => admin_url(),
+				'href'  => $this->get_parse_trigger_link(),
 				'meta'  => array(
 					'title' => esc_html__( 'Parse FA Icons' ),
 				),
 			)
 		);
+	}
+
+	/**
+	 * Get the link that triggers the parser.
+	 *
+	 * @return string
+	 */
+	private function get_parse_trigger_link() {
+		return add_query_arg( array( 'wp_smi_parse' => true ), admin_url() );
+	}
+
+	/**
+	 * Do parsing.
+	 *
+	 * @return void
+	 */
+	public function trigger_parser() {
+
+		if ( ! defined( 'WP_DEBUG' ) || ! current_user_can( 'manage_options' ) || ( defined( 'WP_DEBUG' ) && WP_DEBUG !== true ) || ! defined( 'WP_SMI_DEBUG' ) ) {
+			return;
+		}
+
+		if ( ! isset( $_GET['wp_smi_parse'] ) || ( isset( $_GET['wp_smi_parse'] ) && $_GET['wp_smi_parse'] !== '1' ) ) {
+			return;
+		}
+
+		wp_die( 'test' );
+
 	}
 
 }

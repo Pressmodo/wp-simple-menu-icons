@@ -60,6 +60,7 @@ class Plugin {
 		self::$instance->setup_files();
 
 		Selector::get_instance();
+		Parser::get_instance();
 
 		// Return the instance.
 		return self::$instance;

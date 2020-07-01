@@ -11,6 +11,8 @@
 
 namespace Pressmodo\MenuIcons;
 
+use Symfony\Component\Yaml\Yaml;
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
@@ -99,7 +101,31 @@ class Parser {
 			return;
 		}
 
-		wp_die( 'test' );
+		$yaml = Yaml::parse( file_get_contents( WP_SMI_PLUGIN_DIR . 'dist/metadata/icons.yml' ) );
+
+		$data = array();
+
+		if ( ! empty( $yaml ) && is_array( $yaml ) ) {
+			foreach ( $yaml as $id => $icon ) {
+				if ( ! isset( $icon['unicode'] ) ) {
+					continue;
+				}
+				$data[] = array(
+					'id'      => sanitize_text_field( $id ),
+					'unicode' => sanitize_text_field( $icon['unicode'] ),
+				);
+			}
+		}
+
+		$file_content = wp_json_encode( $data );
+
+		WP_Filesystem();
+
+		global $wp_filesystem;
+
+		$wp_filesystem->put_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json', $file_content, FS_CHMOD_FILE );
+
+		wp_die( esc_html__( 'Font file successfully generated.' ) );
 
 	}
 

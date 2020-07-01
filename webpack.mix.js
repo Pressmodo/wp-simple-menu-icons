@@ -84,7 +84,7 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/js/app.js`, 'js' );
+mix.js( `${devPath}/js/admin.js`, 'js' );
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -103,7 +103,7 @@ var sassConfig = {
 };
 
 // Compile SASS/CSS.
-mix.sass( `${devPath}/scss/style.scss`, 'css', sassConfig );
+mix.sass( `${devPath}/scss/admin.scss`, 'css', sassConfig );
 
 /*
  * Add custom Webpack configuration.

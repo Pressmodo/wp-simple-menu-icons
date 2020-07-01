@@ -59,6 +59,8 @@ class Plugin {
 		self::$instance->setup_constants();
 		self::$instance->setup_files();
 
+		Selector::get_instance();
+
 		// Return the instance.
 		return self::$instance;
 	}
@@ -143,6 +145,9 @@ class Plugin {
 		if ( ! defined( 'WP_SMI_PLUGIN_URL' ) ) {
 			define( 'WP_SMI_PLUGIN_URL', plugin_dir_url( WP_SMI_PLUGIN_FILE ) );
 		}
+
+		define( 'WP_SMI_DB_KEY', '_menu_item_wpsmi' );
+
 	}
 
 	/**

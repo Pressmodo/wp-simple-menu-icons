@@ -18,6 +18,8 @@ if ( $pagenow !== 'nav-menus.php' ) {
 	return;
 }
 
+$icons = json_decode( file_get_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json' ) );
+
 ?>
 
 <script type="text/html" id='tmpl-wpsmi-modal-backdrop'>
@@ -35,7 +37,6 @@ if ( $pagenow !== 'nav-menus.php' ) {
 			<div class="media-frame-title">
 				<h1>
 					<?php esc_html_e( 'Menu icons' ); ?>
-					<span class="dashicons dashicons-arrow-down"></span>
 				</h1>
 			</div>
 			<div class="media-frame-router">
@@ -61,7 +62,21 @@ if ( $pagenow !== 'nav-menus.php' ) {
 								</div>
 							</div>
 							<ul tabindex="-1" class="attachments">
-								icons here
+
+								<?php foreach ( $icons as $icon ) : ?>
+									<li tabindex="0" role="checkbox" aria-label="<?php echo esc_attr( $icon->id ); ?>" aria-checked="false" data-id="<?php echo esc_attr( $icon->id ); ?>" class="attachment save-ready icon _<?php echo esc_attr( str_replace( ' ', '_', trim( $icon->id ) ) ); ?>">
+										<div class="attachment-preview js--select-attachment type-image subtype-jpeg landscape">
+											<div class="thumbnail">
+												<i class="<?php echo esc_attr( $icon->id ); ?>"></i>
+											</div>
+										</div>
+										<button type="button" class="check" tabindex="-1">
+											<span class="media-modal-icon"></span>
+											<span class="screen-reader-text"><?php esc_html_e( 'Deselect' ); ?></span>
+										</button>
+									</li>
+								<?php endforeach; ?>
+
 							</ul>
 							<div class="media-sidebar">
 								<div tabindex="0" class="attachment-details save-ready">

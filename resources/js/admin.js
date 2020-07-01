@@ -186,12 +186,9 @@
 				$li.find('input#wpsmi-input-' + key).val(value);
 
 				if (key === 'icon') {
-
 					if ($icon.length) {
-
 						$icon.remove();
 					}
-
 					$plus.before('<i class="menu-item-wpsmi_icon ' + value + '"></i>');
 				}
 			});

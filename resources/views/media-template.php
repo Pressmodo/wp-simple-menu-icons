@@ -150,6 +150,7 @@ $icons = json_decode( file_get_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json' )
 				<span><?php esc_html_e( 'Size' ); ?> <em>(em)</em></span>
 				<input id="wpsmi-input-size" class="wpsmi-input" name="wpsmi[size]" type="number" min="0.1" step="0.1" value="{{ data.size }}">
 			</label>
+			<input id="wpsmi-input-icon" class="wpsmi-input" name="wpsmi[icon]" type="hidden" value="{{ data.icon }}">
 		</form>
 	</div>
 </script>

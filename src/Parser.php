@@ -71,10 +71,10 @@ class Parser {
 		$admin_bar->add_menu(
 			array(
 				'id'    => 'wpsmi-parse-fa',
-				'title' => esc_html__( 'Parse FA Icons' ),
+				'title' => esc_html__( 'Parse FA Icons', 'wp-simple-menu-icons' ),
 				'href'  => $this->get_parse_trigger_link(),
 				'meta'  => array(
-					'title' => esc_html__( 'Parse FA Icons' ),
+					'title' => esc_html__( 'Parse FA Icons', 'wp-simple-menu-icons' ),
 				),
 			)
 		);
@@ -129,7 +129,7 @@ class Parser {
 
 		$wp_filesystem->put_contents( WP_SMI_PLUGIN_DIR . 'dist/icons.json', $file_content, FS_CHMOD_FILE );
 
-		wp_die( esc_html__( 'Font file successfully generated.' ) );
+		wp_die( esc_html__( 'Font file successfully generated.', 'wp-simple-menu-icons' ) );
 
 	}
 

@@ -107,8 +107,8 @@ class Selector {
 			'wpsmi-admin',
 			'wpsmi_admin_l10n',
 			array(
-				'legacy_pick'    => esc_html__( 'Select' ),
-				'legacy_current' => esc_html__( 'Color' ),
+				'legacy_pick'    => esc_html__( 'Select', 'wp-simple-menu-icons' ),
+				'legacy_current' => esc_html__( 'Color', 'wp-simple-menu-icons' ),
 				'nonce'          => wp_create_nonce( 'wpsmi' ),
 			)
 		);
@@ -120,7 +120,7 @@ class Selector {
 	 * @return void
 	 */
 	public function register_menu_metabox() {
-		add_meta_box( 'wpsmi_metabox', esc_html__( 'Simple menu icons' ), array( $this, 'metabox' ), 'nav-menus', 'side', 'high' );
+		add_meta_box( 'wpsmi_metabox', esc_html__( 'Simple menu icons', 'wp-simple-menu-icons' ), array( $this, 'metabox' ), 'nav-menus', 'side', 'high' );
 	}
 
 	/**
@@ -159,7 +159,7 @@ class Selector {
 						<i class="menu-item-wpsmi_icon <?php echo esc_attr( $item->wpsmi->icon ); ?>"></i>
 					<?php endif; ?>
 				</span>
-				<?php esc_html_e( 'Setup icon' ); ?>
+				<?php esc_html_e( 'Setup icon', 'wp-simple-menu-icons' ); ?>
 			</a>
 		</div>
 		<?php

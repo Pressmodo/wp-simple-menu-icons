@@ -172,7 +172,7 @@
 				return;
 
 			var $li = $('#menu-to-edit').find('#menu-item-' + menu_item_id),
-				$plus = $li.find('.menu-item-wpsmi_plus'),
+				$button = $li.find('.button.menu-item-wpsmi_open'),
 				$icon = $li.find('.menu-item-wpsmi_icon');
 
 			if (!$li.length)
@@ -189,7 +189,7 @@
 					if ($icon.length) {
 						$icon.remove();
 					}
-					$plus.before('<i class="menu-item-wpsmi_icon ' + value + '"></i>');
+					$button.prepend('<i class="menu-item-wpsmi_icon ' + value + '"></i>');
 				}
 			});
 
@@ -233,37 +233,6 @@
 		e.preventDefault();
 		if (wpsmi.__instance === undefined) {
 			wpsmi.__instance = new wpsmi.Application(e);
-		}
-	});
-
-	$(document).on('click', '#wpsmi_metabox', function (e) {
-
-		var menu_font = $('input:checked', $(this)).val(),
-			menu_id = $('#menu').val();
-
-		if ($(e.target).hasClass('save') && menu_font && menu_id) {
-
-			e.preventDefault();
-
-			$.ajax({
-				type: 'POST',
-				url: ajaxurl,
-				data: {
-					action: 'wpsmi_save_nav_menu',
-					menu_id: menu_id,
-					menu_font: menu_font,
-					nonce: wpsmi_l10n.nonce
-				},
-				beforeSend: function () {},
-				complete: function () {},
-				error: function () {
-					alert('Error!');
-				},
-				success: function (response) {
-					location.reload();
-				}
-			});
-
 		}
 	});
 

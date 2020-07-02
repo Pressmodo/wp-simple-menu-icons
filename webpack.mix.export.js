@@ -15,11 +15,11 @@ const rimraf  = require( 'rimraf' );
 const fs      = require( 'fs' );
 
 // Folder name to export the files to.
-let exportPath = 'directorystack-private-messages';
+let exportPath = 'wp-simple-menu-icons';
 
 // Plugin root-level files to include.
 let files = [
-	'directorystack-private-messages.php',
+	'wp-simple-menu-icons.php',
 	'uninstall.php',
 ];
 
@@ -30,6 +30,7 @@ let folders = [
 	'dist',
 	'templates',
 	'src',
+	'resources/views',
 	'vendor',
 ];
 

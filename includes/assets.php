@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function wp_smi_frontend_assets() {
 
-	wp_register_style( 'wp-smi-icon-font', WP_SMI_PLUGIN_URL . 'dist/css/all.min.css', [], WP_SMI_VERSION );
+	wp_register_style( 'wp-smi-icon-font', WP_SMI_PLUGIN_URL . 'dist/css/all.min.css', array(), WP_SMI_VERSION );
 
 	wp_enqueue_style( 'wp-smi-icon-font' );
 

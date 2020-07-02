@@ -159,6 +159,7 @@ class Plugin {
 	public function setup_files() {
 
 		require_once WP_SMI_PLUGIN_DIR . 'includes/assets.php';
+		require_once WP_SMI_PLUGIN_DIR . 'includes/filters.php';
 
 	}
 

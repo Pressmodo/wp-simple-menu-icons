@@ -156,7 +156,11 @@ class Plugin {
 	 *
 	 * @return void
 	 */
-	public function setup_files() {     }
+	public function setup_files() {
+
+		require_once WP_SMI_PLUGIN_DIR . 'includes/assets.php';
+
+	}
 
 	/**
 	 * Allow translations.

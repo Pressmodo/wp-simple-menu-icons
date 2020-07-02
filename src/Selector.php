@@ -65,7 +65,6 @@ class Selector {
 		add_filter( 'wp_setup_nav_menu_item', array( $this, 'setup_nav_menu_item_icon' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
-		add_action( 'admin_init', array( $this, 'register_menu_metabox' ) );
 
 		add_action( 'wp_nav_menu_item_custom_fields', array( $this, 'setup_fields' ), 10, 4 );
 		add_action( 'wp_nav_menu_item_custom_fields', array( $this, 'setup_icon' ), 100, 4 );
@@ -270,22 +269,6 @@ class Selector {
 		}
 
 		return $nav_menu_selected_id;
-	}
-
-	/**
-	 * Metabox container
-	 *
-	 * @return void
-	 */
-	public function metabox() {
-		$menu_id = $this->nav_menu_selected_id();
-
-		if ( ! $current = get_term_meta( $menu_id, WP_SMI_DB_KEY, true ) ) {
-			$current = 'dashicons';
-		}
-		?>
-
-		<?php
 	}
 
 	/**

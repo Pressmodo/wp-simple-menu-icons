@@ -20,8 +20,10 @@ defined( 'ABSPATH' ) || exit;
 function wp_smi_frontend_assets() {
 
 	wp_register_style( 'wp-smi-icon-font', WP_SMI_PLUGIN_URL . 'dist/css/all.min.css', array(), WP_SMI_VERSION );
+	wp_register_style( 'wp-smi-frontend', WP_SMI_PLUGIN_URL . 'dist/css/frontend.css', array(), WP_SMI_VERSION );
 
 	wp_enqueue_style( 'wp-smi-icon-font' );
+	wp_enqueue_style( 'wp-smi-frontend' );
 
 }
 add_action( 'wp_enqueue_scripts', 'wp_smi_frontend_assets' );

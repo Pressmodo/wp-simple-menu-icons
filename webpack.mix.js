@@ -104,6 +104,7 @@ var sassConfig = {
 
 // Compile SASS/CSS.
 mix.sass( `${devPath}/scss/admin.scss`, 'css', sassConfig );
+mix.sass( `${devPath}/scss/frontend.scss`, 'css', sassConfig );
 mix.copy( 'node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'dist/css' )
 mix.copy( 'node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/webfonts' )
 mix.copy( 'node_modules/@fortawesome/fontawesome-free/metadata/icons.yml', 'dist/metadata' )

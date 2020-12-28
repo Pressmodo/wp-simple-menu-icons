@@ -21,6 +21,7 @@ let exportPath = 'wp-simple-menu-icons';
 let files = [
 	'wp-simple-menu-icons.php',
 	'uninstall.php',
+	'readme.txt',
 ];
 
 // Folders to include.

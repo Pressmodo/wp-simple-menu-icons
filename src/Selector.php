@@ -186,7 +186,7 @@ class Selector {
 				$menu_item_wpsmi['position'] = sanitize_html_class($_POST['wpsmi'][$menu_item_db_id]['position']); //phpcs:ignore
 				$menu_item_wpsmi['align']    = sanitize_html_class($_POST['wpsmi'][$menu_item_db_id]['align']); //phpcs:ignore
 				$menu_item_wpsmi['size']     = sanitize_text_field($_POST['wpsmi'][$menu_item_db_id]['size']); //phpcs:ignore
-				$menu_item_wpsmi['icon']     = esc_attr($_POST['wpsmi'][$menu_item_db_id]['icon']); //phpcs:ignore
+				$menu_item_wpsmi['icon']     = sanitize_text_field($_POST['wpsmi'][$menu_item_db_id]['icon']); //phpcs:ignore
 				$menu_item_wpsmi['color']    = sanitize_text_field($_POST['wpsmi'][$menu_item_db_id]['color']); //phpcs:ignore
 
 				$this->update( $menu_item_db_id, $menu_item_wpsmi );
